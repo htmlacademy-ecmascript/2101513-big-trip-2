@@ -6,7 +6,7 @@ import {
   HOURS_IN_DAY,
   MILLISECONDS_IN_MINUTES,
   SECONDS_IN_MINUTES,
-  DURATIONS
+  DURATIONS,
 } from '../constants.js';
 
 dayjs.extend(minMax);
@@ -17,7 +17,6 @@ const getDate = ({next}) => {
   const daysInterval = getRandomNumber(0, DURATIONS.DAY);
   const hoursInterval = getRandomNumber(1, DURATIONS.HOUR);
   const minsInterval = getRandomNumber(0, DURATIONS.MINUTE);
-
   if (next) {
     randomDate = dayjs(randomDate)
       .add(minsInterval, 'minute')
@@ -52,18 +51,9 @@ function toUpperCaseFirstSign(item) {
   return item.charAt(0).toUpperCase() + item.substring(1);
 }
 
-const isPastDate = (date) => dayjs(date).isBefore(dayjs());
-
-const isPresentDate = (date) => dayjs(date).isSame(dayjs(), 'day');
-
-const isFutureDate = (date) => dayjs(date).isAfter(dayjs());
-
 export {
   humanizeTaskDueDate,
   getDifferenceInTime,
   getDate,
   toUpperCaseFirstSign,
-  isPastDate,
-  isPresentDate,
-  isFutureDate
 };

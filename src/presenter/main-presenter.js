@@ -4,6 +4,7 @@ import PointsPresenter from '../presenter/points-presenter.js';
 import DestinationModel from '../model/destination-model.js';
 import EventPointsModel from '../model/event-points-model.js';
 import OffersModel from '../model/offers-model.js';
+import FilterPresenter from './filter-presenter.js';
 
 const headerTripMainContainer = document.querySelector('.trip-main');
 const headerFilterContainer = document.querySelector('.trip-controls__filters');
@@ -26,10 +27,12 @@ const pointsPresenter = new PointsPresenter({
   eventPointsModel,
   offersModel
 });
+const filterPresenter = new FilterPresenter(eventPointsModel);
 
 export default class MainPresenter {
   init() {
     headerPresenter.init();
+    filterPresenter.init();
     pointsPresenter.init();
   }
 }
