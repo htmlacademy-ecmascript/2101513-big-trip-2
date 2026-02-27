@@ -27,7 +27,6 @@ const getDate = ({next}) => {
   return randomDate;
 };
 
-
 function humanizeTaskDueDate(date, format) {
   return date ? dayjs(date).format(format) : '';
 }

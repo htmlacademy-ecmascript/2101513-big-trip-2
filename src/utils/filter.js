@@ -5,7 +5,6 @@ const isPointFuture = (point) => dayjs().isAfter(point.dateFrom);
 const isPointPresent = (point) => dayjs().isAfter(point.dateFrom) && dayjs().isBefore(point.dateFrom);
 const isPointPast = (point) => dayjs().isBefore(point.dateFrom);
 
-
 export const filter = {
   [FILTERS_TYPE.EVERYTHING]: (eventPoints) => eventPoints,
   [FILTERS_TYPE.FUTURE]: (eventPoints) => eventPoints.filter(isPointFuture),

@@ -23,7 +23,6 @@ export default class ListFilterView extends AbstractView {
   constructor({items}) {
     super();
     this.#items = items;
-
   }
 
   get template() {
